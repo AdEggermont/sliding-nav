@@ -1,0 +1,169 @@
+/*
+	Stylesheet for Sliding nav
+
+	author:     Ad Eggermont <adeggermont@gmail.com>
+*/
+
+/*
+	Reset
+*/
+
+article, aside, dialog, figure, footer, header, hgroup, nav, section, main { display: block; }
+body, form, ol, ul, dl, li, dt, dd, td, th ,tr, h1, h2, h3, h4, h5, h6, p, pre, blockquote, address, figure { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+img { border:0; }
+fieldset { margin: 0; padding: 0; border: 0; }
+input, select, textarea { font-size: 100%; vertical-align: middle; }
+table { border-collapse: collapse; border-spacing: 0; empty-cells: show; }
+th { text-align: left; }
+a:focus { overflow: hidden; }
+
+/*
+	Clearfix
+*/
+
+.clearfix:after,
+.container:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix,
+.container {
+	zoom: 1;
+}
+
+/*
+	General
+*/
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	*behavior: url(/js/boxsizing.htc); /* Absolute path to htc file */
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #000;
+	background: #FFF;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+
+.container {
+	width: 990px;
+	max-width: 100%;
+	margin: 50px auto 0;
+}
+
+.old-browser-warning {
+	color: #FFF;
+	background-color: #BA1E1E;
+	padding: 30px 0 15px;
+	text-align: center;
+}
+
+	.old-browser-warning p {
+		padding: 0 0 15px 0;
+	}
+
+		.old-browser-warning a,
+		.old-browser-warning a:visited {
+			color: #fff;
+			border-color: pink;
+		}
+
+		.old-browser-warning a:hover,
+		.old-browser-warning a:active,
+		.old-browser-warning a:focus {
+			color: #fff;
+			border-color: #fff;
+		}
+
+/*
+	Sliding nav
+*/
+
+.select-bar-nav	ul {
+	list-style: none;
+	padding: 0;
+	position: relative;
+	z-index: 2;
+	width: 80%;
+	margin: 0 auto;
+}
+
+	.select-bar-nav li {
+		float: left;
+		width: 33.3%;
+	}
+
+		.select-bar-nav a,
+		.select-bar-nav a:visited {
+			display: block;
+			text-align: center;
+			padding-bottom: 40px;
+			text-decoration: none;
+			color: #999;
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+			font-size: 14px;
+			outline: none;
+			-webkit-transition: color .2s ease;
+			   -moz-transition: color .2s ease;
+			        transition: color .2s ease;
+		}
+
+		.select-bar-nav a:hover,
+		.select-bar-nav a:active,
+		.select-bar-nav a:focus,
+		.select-bar-nav a.active,
+		.select-bar-nav a.active:visited {
+			color: #1daad8;
+		}
+
+.select-bar {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+	height: 10px;
+	background: #CCC;
+	top: -20px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 4px 5px rgba(0, 0, 0, .1);
+	   -moz-box-shadow: inset 0 4px 5px rgba(0, 0, 0, .1);
+	        box-shadow: inset 0 4px 5px rgba(0, 0, 0, .1);
+}
+
+	.select-bar .item {
+		float: left;
+		width: 33.3%;
+		position: relative;
+		height: 15px;
+	}
+
+	.select-bar .current {
+		position: absolute;
+		left: 0;
+		width: 33.3%;
+		height: 10px;
+		background: #20bef1;
+		background: -moz-linear-gradient(top,  #20bef1 0%, #1daad8 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#20bef1), color-stop(100%,#1daad8));
+		background: -webkit-linear-gradient(top,  #20bef1 0%,#1daad8 100%);
+		background: -ms-linear-gradient(top,  #20bef1 0%,#1daad8 100%);
+		background: linear-gradient(to bottom,  #20bef1 0%,#1daad8 100%);
+		border-radius: 10px;
+		-webkit-transition: left .4s ease;
+		   -moz-transition: left .4s ease;
+		        transition: left .4s ease;
+	}
